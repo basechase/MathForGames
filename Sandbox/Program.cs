@@ -26,6 +26,12 @@ namespace Sandbox
 
             Sound twixbigger = Raylib.LoadSound("C:\\dev\\MathForGames\\Sandbox\\twixbigger.wav");
 
+            int x = 32;
+            int y = 32;
+
+            int a = 100;
+            int b = 350;
+
             while (!Raylib.WindowShouldClose())
             {
                 Raylib.BeginDrawing();
@@ -33,15 +39,42 @@ namespace Sandbox
                 Raylib.DrawText("They're making the twix bigger! They're trying to make us fat! \n - Kanye West 2022", 18, 18, 20, Color.Brown);
                 Raylib.DrawText("Press Spacebar to hear Kanye!", 300,50, 20, Color.Brown);
                 Raylib.DrawTexture(texture, 500, 200, Color.Gray);
-                Raylib.DrawTexture(texture2, 0,0 , Color.Gray);
-                Raylib.DrawTexture(texture3, 100, 350, Color.Gray);
+                Raylib.DrawTexture(texture2, x,y , Color.Gray);
+                Raylib.DrawTexture(texture3, a, b, Color.Gray);
                 if (Raylib.IsKeyPressed(KeyboardKey.Space))
                 {
                     Raylib.PlaySound(twixbigger);
                 }
 
+                if (Raylib.IsKeyPressed(KeyboardKey.W))
+                {
+                    y -= 32;
+                }
+                if (Raylib.IsKeyPressed(KeyboardKey.D))
+                {
+                    x += 32;
+                }
+                if (Raylib.IsKeyPressed(KeyboardKey.A))
+                {
+                    x -= 32;
+                }
+                if (Raylib.IsKeyPressed(KeyboardKey.S))
+                {
+                    y += 32;
+                }
 
-                Raylib.EndDrawing();
+                if (Raylib.IsKeyPressed(KeyboardKey.U))
+                {
+                    b -= 32;    
+                }
+                if (Raylib.IsKeyPressed(KeyboardKey.J))
+                {
+                    b += 32;
+                }
+
+
+
+                    Raylib.EndDrawing();
             }
 
             Raylib.CloseWindow();
