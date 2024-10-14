@@ -12,7 +12,24 @@ namespace MathLibrary
     {
         float x, y;
 
-       
+        public float Magnitude
+        {
+            get
+            {
+                // c = sqrt(x^2 x y^2)
+                return (float)Math.Abs(Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2)));
+            }
+        }
+
+        public Vector2 Normalized
+        {
+            get
+            {
+                return this / Magnitude;
+            }
+        }
+
+
 
         public Vector2(float x = 0, float y = 0)
         {
@@ -20,6 +37,17 @@ namespace MathLibrary
             this.y = y;
         }
 
+        public Vector2 Normalize()
+        {
+            this = Normalized;
+            return this;
+        }
+
+        public override string ToString()
+        {
+            // (x, y)
+            return   x + ", " + y + ")";
+        }
 
         public static bool operator ==(Vector2 lhs, Vector2 rhs)
         {
@@ -49,21 +77,26 @@ namespace MathLibrary
 
 
         //op overload for multipication by a vector
+        /*
         public static Vector2 operator *(Vector2 left, Vector2 right)
         {
             return new Vector2(left.x * right.x, left.y * right.y);
         }
+               in the math world you cant do this, is a bad habit 
+
+        */
+
 
         //op overload for multplication by a scalar
-        public static Vector2 operator *(Vector2 left, float right)
+        public static Vector2 operator *(Vector2 left, float scalar)
         {
-            return new Vector2(left.x * right, left.y * right);
+            return new Vector2(left.x * scalar, left.y * scalar);
         }
 
         //op overload for division
-        public static Vector2 operator /(Vector2 left, Vector2 right)
+        public static Vector2 operator /(Vector2 left,float scalar)
         {
-            return new Vector2(left.x / right.x, left.y / right.y);
+            return new Vector2(left.x / scalar, left.y / scalar);
         }
 
         //implicit conversion from System.Numerics.Vector2 to Vector2
