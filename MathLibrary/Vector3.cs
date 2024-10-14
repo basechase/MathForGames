@@ -65,14 +65,14 @@ namespace MathLibrary
 
         public static Vector3 operator +(Vector3 left, Vector3 right)
         {
-            return new Vector3(left.x + right.x, left.y + right.y);
+            return new Vector3(left.x + right.x, left.y + right.y, left.z + right.z);
         }
 
         //op overload for subtraction
 
         public static Vector3 operator -(Vector3 left, Vector3 right)
         {
-            return new Vector3(left.x - right.x, left.y - right.y);
+            return new Vector3(left.x - right.x, left.y - right.y, left.z - right.z);
         }
 
 
@@ -90,13 +90,13 @@ namespace MathLibrary
         //op overload for multplication by a scalar
         public static Vector3 operator *(Vector3 left, float scalar)
         {
-            return new Vector3(left.x * scalar, left.y * scalar);
+            return new Vector3(left.x * scalar, left.y * scalar, left.z * scalar);
         }
 
         //op overload for division
         public static Vector3 operator /(Vector3 left, float scalar)
         {
-            return new Vector3(left.x / scalar, left.y / scalar);
+            return new Vector3(left.x / scalar, left.y / scalar, left.z / scalar);
         }
 
         //implicit conversion from System.Numerics.Vector2 to Vector3
