@@ -10,7 +10,11 @@ namespace Sandbox
         static void Main(string[] args)
         {
             MathLibrary.Vector2 a = new MathLibrary.Vector2(1, 2);
+            MathLibrary.Vector3 b = new MathLibrary.Vector3(1, 3, 3);
+            MathLibrary.Vector3 c = new MathLibrary.Vector3(1, 3, 3);
             Console.WriteLine(a.ToString());
+
+            Console.WriteLine(b - b);
 
 
             Raylib.InitWindow(1200, 600, "Hello World");

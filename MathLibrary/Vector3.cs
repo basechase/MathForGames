@@ -103,14 +103,14 @@ namespace MathLibrary
 
         public static implicit operator Vector3(System.Numerics.Vector3 vector)
         {
-            return new Vector3(vector.X, vector.Y);
+            return new Vector3(vector.X, vector.Y, vector.Z);
         }
 
         //implicit conversion from Vector2 to System.Numerics.Vector3
 
         public static implicit operator System.Numerics.Vector3(Vector3 vector)
         {
-            return new System.Numerics.Vector3(vector.x, vector.y);
+            return new System.Numerics.Vector3(vector.x, vector.y, vector.z);
         }
 
 
