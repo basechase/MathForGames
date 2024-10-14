@@ -52,7 +52,7 @@ namespace MathLibrary
         public static bool operator ==(Vector3 lhs, Vector3 rhs)
         {
 
-            return (lhs.x == rhs.x) && (lhs.y == rhs.y);
+            return (lhs.x == rhs.x) && (lhs.y == rhs.y) && (lhs.z == rhs.z);
         }
 
         public static bool operator !=(Vector3 lhs, Vector3 rhs)
