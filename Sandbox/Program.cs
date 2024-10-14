@@ -9,6 +9,11 @@ namespace Sandbox
     {
         static void Main(string[] args)
         {
+            MathLibrary.Vector2 a = new MathLibrary.Vector2();
+            MathLibrary.Vector2 b = new MathLibrary.Vector2();
+            Console.WriteLine(a == b);
+            Console.WriteLine(a != b);
+            
             Raylib.InitWindow(1200, 600, "Hello World");
             Raylib.InitAudioDevice();
 
@@ -25,15 +30,16 @@ namespace Sandbox
             Raylib.UnloadImage(image3);
 
             Sound twixbigger = Raylib.LoadSound("C:\\dev\\MathForGames\\Sandbox\\twixbigger.wav");
-
+            /*
             int x = 32;
             int y = 32;
 
             int a = 100;
             int b = 350;
-
+            */
             while (!Raylib.WindowShouldClose())
             {
+                /*
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.White);
                 Raylib.DrawText("They're making the twix bigger! They're trying to make us fat! \n - Kanye West 2022", 18, 18, 20, Color.Brown);
@@ -73,12 +79,12 @@ namespace Sandbox
                 }
 
 
-
+                */
                     Raylib.EndDrawing();
             }
 
             Raylib.CloseWindow();
-
+            
 
 
         }
