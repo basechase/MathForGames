@@ -33,9 +33,11 @@ namespace MathLibrary
             return (x * other.x) + (y * other.y) + (z * other.z);
         }
         //cross product
-        public float CrossProduct(Vector3 other)
+        public Vector3 CrossProduct(Vector3 other)
         {
-            return 
+            return new Vector3(y * other.z - z * other.y,
+                               z * other.x - x * other.z,
+                               x * other.y - y * other.x);
         }
 
 
