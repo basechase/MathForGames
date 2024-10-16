@@ -27,8 +27,16 @@ namespace MathLibrary
                 return this / Magnitude;
             }
         }
-        //cross product
         //dot product
+        public float DotProduct(Vector3 other)
+        {
+            return (x * other.x) + (y * other.y) + (z * other.z);
+        }
+        //cross product
+        public float CrossProduct(Vector3 other)
+        {
+            return 
+        }
 
 
         public Vector3(float x = 0, float y = 0, float z = 0)
@@ -37,6 +45,7 @@ namespace MathLibrary
             this.y = y;
             this.z = z;
         }
+
 
         public Vector3 Normalize()
         {
