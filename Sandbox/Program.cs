@@ -9,12 +9,6 @@ namespace Sandbox
     {
         static void Main(string[] args)
         {
-            MathLibrary.Vector2 a = new MathLibrary.Vector2(1, 2);
-            MathLibrary.Vector3 b = new MathLibrary.Vector3(1, 3, 3);
-            MathLibrary.Vector3 c = new MathLibrary.Vector3(1, 3, 3);
-            Console.WriteLine(a.ToString());
-
-            Console.WriteLine(b - b);
 
 
             Raylib.InitWindow(1200, 600, "Hello World");
@@ -33,6 +27,8 @@ namespace Sandbox
             Raylib.UnloadImage(image3);
 
             Sound twixbigger = Raylib.LoadSound("C:\\dev\\MathForGames\\Sandbox\\twixbigger.wav");
+           
+       
             /*
             int x = 32;
             int y = 32;
@@ -40,9 +36,94 @@ namespace Sandbox
             int a = 100;
             int b = 350;
             */
+
+            //player 
+            float playerRadius = 10;
+            Vector2 screenDimensions = new Vector2(Raylib.GetScreenWidth(), Raylib.GetScreenHeight());
+           
+            Vector2 playerForward = new Vector2(0, 1).Normalized;
+            Vector2 playerPosition = new Vector2(screenDimensions.x * 0.5f, screenDimensions.y * 0.75f);
+
+            
+            //enemy 
+
+            Vector2 enemyPosition = new Vector2(screenDimensions.x * 0.5f, screenDimensions.y * 0.5f);
+            float enemyRadius = 10;
+            Color enemyColor = Color.Red;
+
+            float playerViewAngle = 90;
+
+            float playerViewDistance = 200;
+
+            float playerSpeed = 500;
+
             while (!Raylib.WindowShouldClose())
             {
+                //UPDATE
+                // playerPosition.x += 20 * Raylib.GetFrameTime();
+
+                
+                
+
+                Vector2 movementInput = new Vector2();
+                movementInput.y -= Raylib.IsKeyDown(KeyboardKey.W);
+                movementInput.y += Raylib.IsKeyDown(KeyboardKey.S);
+                movementInput.x -= Raylib.IsKeyDown(KeyboardKey.A);
+                movementInput.x += Raylib.IsKeyDown(KeyboardKey.D);
+
+               
+
+                playerPosition += movementInput * playerSpeed * Raylib.GetFrameTime();
+
+
+                Vector2 playerToEnemyDirection = (playerPosition - enemyPosition).Normalized;
+
+                float distance =  enemyPosition.Distance(playerPosition);
+                float angleToEnemy = (float)Math.Abs(Math.Acos(playerToEnemyDirection.DotProduct(playerForward)));
+                
+
+                Console.WriteLine(Math.Abs(angleToEnemy) + "|" + (playerViewAngle / 2) * (Math.PI / 180));
+
+              
+                // if enemy is in sight
+                if (angleToEnemy < (playerViewAngle / 2) * (Math.PI / 180) && distance < playerViewDistance)
+                {
+                    enemyColor = Color.Pink;
+                }
+                else
+                {
+                    enemyColor = Color.Red;
+                }
+
+
+
+                //DRAW
+                Raylib.BeginDrawing();
+                Raylib.ClearBackground(Color.White);
+
+                //draw enemy
+                Raylib.DrawCircleV(enemyPosition, enemyRadius, enemyColor);
+
+                //draw player
+                Raylib.DrawCircleV(playerPosition, playerRadius, Color.Green);
+
+                //draw player forawds
+                Raylib.DrawLineV(playerPosition, playerPosition - (playerForward * 100), Color.Orange);
+
+
+                //draw view cone/cam
+                Raylib.DrawCircleSectorLines(playerPosition, 
+                    playerViewDistance, 
+                    -90 - (playerViewAngle / 2 ),
+                    -90 + (playerViewAngle / 2),
+                    10, 
+                    Color.Blue);
+
+
+
                 /*
+                 * 
+                 * 
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.White);
                 Raylib.DrawText("They're making the twix bigger! They're trying to make us fat! \n - Kanye West 2022", 18, 18, 20, Color.Brown);

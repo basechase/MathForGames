@@ -27,7 +27,8 @@ namespace MathLibrary
                 return this / Magnitude;
             }
         }
-
+        //cross product
+        //dot product
 
 
         public Vector3(float x = 0, float y = 0, float z = 0)

@@ -10,7 +10,7 @@ namespace MathLibrary
 {
     public struct Vector2
     {
-        float x, y;
+        public float x, y;
 
         public float Magnitude
         {
@@ -48,6 +48,18 @@ namespace MathLibrary
             // (x, y)
             return   x + ", " + y + ")";
         }
+
+        public float DotProduct(Vector2 other)
+        {
+
+            return (x * other.x) + (y * other.y);
+        }
+
+        public float Distance(Vector2 other)
+        {
+            return (other - this).Magnitude;
+        }
+
 
         public static bool operator ==(Vector2 lhs, Vector2 rhs)
         {
