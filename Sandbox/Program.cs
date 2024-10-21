@@ -64,12 +64,12 @@ namespace Sandbox
                 // playerPosition.x += 20 * Raylib.GetFrameTime();
 
                 Matrix3 a = new Matrix3(2, 2, 2,
-                                        2, 2, 2,
+                                        3, 3, 2,
                                         2, 2, 2);
 
-                Matrix3 b = new Matrix3(3, 3, 3,
+                Matrix3 b = new Matrix3(3, 4, 7,
                                         3, 3, 3,
-                                        3, 3, 3);
+                                        6, 3, 3);
 
                
                 Matrix3 c = (a * b);
