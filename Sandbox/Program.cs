@@ -1,5 +1,6 @@
 ﻿using MathLibrary;
 using Raylib_cs;
+using System;
 using System.ComponentModel;
 
 
@@ -62,7 +63,19 @@ namespace Sandbox
                 //UPDATE
                 // playerPosition.x += 20 * Raylib.GetFrameTime();
 
-                
+                Matrix3 a = new Matrix3(2, 2, 2,
+                                        2, 2, 2,
+                                        2, 2, 2);
+
+                Matrix3 b = new Matrix3(3, 3, 3,
+                                        3, 3, 3,
+                                        3, 3, 3);
+
+               
+                Matrix3 c = (a * b);
+
+                Console.WriteLine(c);
+
                 
 
                 Vector2 movementInput = new Vector2();
