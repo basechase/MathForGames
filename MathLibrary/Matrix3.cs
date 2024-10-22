@@ -82,9 +82,9 @@ namespace MathLibrary
                                a.m10 * b.m01 + a.m11 * b.m11 + a.m12 * b.m21,
                                a.m10 * b.m02 + a.m11 * b.m12 + a.m12 * b.m22,
                                
-                               a.m20 * b.m00 + a.m21 * b.m20 + a.m22 * b.m20,
-                               a.m20 * b.m01 + a.m21 * b.m21 + a.m22 * b.m21,
-                               a.m20 * b.m02 + a.m21 * b.m22 + a.m22 * b.m22);
+                               a.m20 * b.m00 + a.m21 * b.m10 + a.m22 * b.m20,
+                               a.m20 * b.m01 + a.m21 * b.m11 + a.m22 * b.m21,
+                               a.m20 * b.m02 + a.m21 * b.m12 + a.m22 * b.m22);
                                                                               
         }
 
