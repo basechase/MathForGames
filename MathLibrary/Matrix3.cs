@@ -43,17 +43,17 @@ namespace MathLibrary
         }
         public static Matrix3 CreateTranslation(float x, float y)
         {
-            
+            return new Matrix3();
         }
 
         public static Matrix3 CreateRotation(float radians)
         {
-
+            return new Matrix3();
         }
 
         public static Matrix3 CreateScale(float x, float y, float z)
         {
-
+            return new Matrix3();
 
             /*
                                (1, 0, 0, 0,

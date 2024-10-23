@@ -9,7 +9,7 @@ namespace MathLibrary
 {
     public struct Vector3
     {
-        float x, y, z;
+        public float x, y, z;
 
         public float Magnitude
         {
