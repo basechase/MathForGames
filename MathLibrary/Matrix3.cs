@@ -51,6 +51,14 @@ namespace MathLibrary
             return new Matrix3();
         }
 
+
+        /*
+         *  matrix3 * vector3
+         */
+        
+
+
+
         public static Matrix3 CreateScale(float x, float y, float z)
         {
             return new Matrix3();
