@@ -39,6 +39,20 @@ namespace MathLibrary
             this.m33 = m33;
         }
 
+        public static Matrix4 CreateRotationX(float x)
+        {
+            
+        }
+
+        public static Matrix4 CreateRotationY(float y)
+        {
+
+        }
+
+        public static Matrix4 CreateRotationZ(float z)
+        {
+
+        }
 
     }
 }
