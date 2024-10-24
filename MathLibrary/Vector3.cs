@@ -99,12 +99,17 @@ namespace MathLibrary
         */
 
 
+
         //op overload for multplication by a scalar
+
         public static Vector3 operator *(Vector3 left, float scalar)
         {
             return new Vector3(left.x * scalar, left.y * scalar, left.z * scalar);
         }
-
+        public static Vector3 operator *(float scalar, Vector3 right)
+        {
+            return new Vector3(right.x * scalar, right.y * scalar, right.z * scalar);
+        }
         //op overload for division
         public static Vector3 operator /(Vector3 left, float scalar)
         {

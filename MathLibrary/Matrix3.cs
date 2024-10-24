@@ -51,7 +51,14 @@ namespace MathLibrary
         public static Matrix3 CreateRotation(float radians)
         {
 
-            return new Matrix3();
+            float cos = (float)Math.Cos(radians);
+            float sin = (float)Math.Sin(radians);
+
+            return new Matrix3(
+                cos, -sin, 0,
+                sin, cos, 0,
+                0, 0, 1
+            );
         }
 
 
@@ -116,6 +123,15 @@ namespace MathLibrary
                                a.m20 * b.m02 + a.m21 * b.m12 + a.m22 * b.m22);
                                                                               
         }
+        public static Vector3 operator *(Matrix3 matrix, Vector3 vector)
+        {
+            return new Vector3(
+                matrix.m00 * vector.x + matrix.m01 * vector.y + matrix.m02 * vector.z,
+                matrix.m10 * vector.x + matrix.m11 * vector.y + matrix.m12 * vector.z,
+                matrix.m20 * vector.x + matrix.m21 * vector.y + matrix.m22 * vector.z
+            );
+        }
+
 
         public override string ToString()
         {
