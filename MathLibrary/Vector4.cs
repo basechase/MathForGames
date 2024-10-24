@@ -79,11 +79,7 @@ namespace MathLibrary
 
         public static Vector4 operator /(Vector4 vector, float scalar)
         {
-            if (scalar == 0)
-            {
-                throw new DivideByZeroException("Cannot divide by zero.");
-            }
-
+            
             return new Vector4(vector.x / scalar, vector.y / scalar, vector.z / scalar, vector.w / scalar);
         }
 
