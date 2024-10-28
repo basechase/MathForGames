@@ -10,9 +10,19 @@ namespace Sandbox
     {
         static void Main(string[] args)
         {
+            Raylib.InitWindow(1200, 800, "Hello World");
+            Raylib.SetTargetFPS(60); 
 
+            Actor a = new Actor();
 
-            Raylib.InitWindow(1200, 600, "Hello World");
+            Transform2D t1 = new Transform2D(a);
+
+            t1.LocalScale = new Vector2(100,100);
+            Vector2 offset = new Vector2(t1.LocalScale.x / 2, t1.LocalScale.y / 2);
+            t1.LocalPosition = new Vector2(
+                (Raylib.GetScreenWidth() * 0.33f) - offset.x, 
+                (Raylib.GetScreenHeight() * 0.33f) - offset.y);
+
             Raylib.InitAudioDevice();
 
             Image image = Raylib.LoadImage("C:\\dev\\MathForGames\\Sandbox\\twix.png");
@@ -30,36 +40,32 @@ namespace Sandbox
             Sound twixbigger = Raylib.LoadSound("C:\\dev\\MathForGames\\Sandbox\\twixbigger.wav");
            
        
-            /*
-            int x = 32;
-            int y = 32;
-
-            int a = 100;
-            int b = 350;
-            */
-
-            //player 
-            float playerRadius = 10;
-            Vector2 screenDimensions = new Vector2(Raylib.GetScreenWidth(), Raylib.GetScreenHeight());
-           
-            Vector2 playerForward = new Vector2(0, 1).Normalized;
-            Vector2 playerPosition = new Vector2(screenDimensions.x * 0.5f, screenDimensions.y * 0.75f);
-
-            
-            //enemy 
-
-            Vector2 enemyPosition = new Vector2(screenDimensions.x * 0.5f, screenDimensions.y * 0.5f);
-            float enemyRadius = 10;
-            Color enemyColor = Color.Red;
-
-            float playerViewAngle = 90;
-
-            float playerViewDistance = 200;
-
-            float playerSpeed = 500;
+      
 
             while (!Raylib.WindowShouldClose())
             {
+                Raylib.BeginDrawing();
+                Raylib.ClearBackground(Color.White);
+
+                t1.Translate(t1.Forward * 50 * Raylib.GetFrameTime());
+                t1.Rotate(0.5f * Raylib.GetFrameTime());
+
+                //draw t1
+                Rectangle rect = new Rectangle(t1.GlobalPosition + offset, t1.GlobalScale);
+
+                Raylib.DrawRectanglePro(
+                    rect,
+                    new Vector2(0,0) + offset,
+                    -t1.GlobalRotationAngle *  (180 / (float)Math.PI),
+                    Color.Blue);
+
+                Raylib.DrawLineV(t1.GlobalPosition + offset, t1.GlobalPosition + offset + (t1.Forward * 100), Color.Red);
+
+                Raylib.EndDrawing();
+
+
+                /*
+                #region old cold
                 //UPDATE
                 // playerPosition.x += 20 * Raylib.GetFrameTime();
 
@@ -131,7 +137,7 @@ namespace Sandbox
                     -90 + (playerViewAngle / 2),
                     10, 
                     Color.Blue);
-
+                #endregion
 
 
                 /*
@@ -177,7 +183,6 @@ namespace Sandbox
 
 
                 */
-                    Raylib.EndDrawing();
             }
 
             Raylib.CloseWindow();
