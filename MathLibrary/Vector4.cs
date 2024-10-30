@@ -35,6 +35,9 @@ namespace MathLibrary
         {
             get
             {
+                if (Magnitude == 0) { 
+                    return new Vector4();
+                }
                 float magnitude = Magnitude;
                 return magnitude > 0 ? this / magnitude : new Vector4(0, 0, 0, 0);
             }
