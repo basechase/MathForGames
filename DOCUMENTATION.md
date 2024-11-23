@@ -19,7 +19,7 @@
 
 
 
-<h2>Matrix 3 Class<h2 id=m3>
+<h2>Matrix 3 Class</h2 id=m3>
 
 <ul>
 <li>Returns Identity matrix</li>
