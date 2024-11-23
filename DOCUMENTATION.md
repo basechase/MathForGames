@@ -39,7 +39,7 @@
 
 <h2 id="v3">Vector 3 Class</h2>
 <ul>
-    <li>Gives use of x, y, and z components of a vector</li>
+    <li>gives use of x, y, and z components of a vector</li>
     <li>Provides magnitude function for returning the length of a vector</li>
     <li>Provides normalize function for the unit length of a vector</li>
     <li>Provides DotProduct function to give the angle between two vectors</li>
@@ -56,5 +56,5 @@
     <li>Provides a function for calculating the magnitude of a 4D vector</li>
     <li>Provides normalization to return a unit vector</li>
     <li>Provides a function to calculate the dot product of two vectors</li>
-    <li>Supports operator overloads for vector addition, subtraction, and scalar multiplication</li>
+    <li>Supports operator overloads for vector addtion, subtraction, and scalar multiplication</li>
 </ul>
