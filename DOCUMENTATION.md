@@ -7,14 +7,15 @@
 <h1>Index</h1>
 
 <ul>
-<li>[Matrix 3]</li href=m3>
-<li>Matrix 4</li>
-<li>Vector 2</li>
-<li>Vector 4</li>
+<li><a href = "#m3">Matrix 3<a></li>
+<li><a href = "#m4">Matrix 4<a></li>
+<li<a href = "#v2">Vector 2<a></li>
+<li><a href = "#v3">Vector 3<a></li>
+<li><a href = "#v4">Vector 4<a><li>
 </ul>
 
 
 
 
-<h2>Matrix 3 Class<h2 {#m3}>
+<h2>Matrix 3 Class<h2 id=m3>
 
