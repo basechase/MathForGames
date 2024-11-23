@@ -7,7 +7,7 @@
 <h1>Index</h1>
 
 <ul>
-<li>Matrix 3</li href=m3>
+<li>[Matrix 3]</li href=m3>
 <li>Matrix 4</li>
 <li>Vector 2</li>
 <li>Vector 4</li>
