@@ -2,26 +2,19 @@
 
 <h1>this is a math library with a few features/functions</h1>
 
-<h2>Matrix 3 and 4 classes can do\be used for the following </h2>
 
 
-<ol>
+<h1>Index</h1>
 
-<li>transforms</li>
-<li>rotations</li>
-<li>scaling matricies</li>
-<li>multiplying a matrix times a vector</li>
-<li>subtracting a matrix from another matrix</li>
-<li>adding a matrix to another matrix</li>
-
-</ol>
-
-<h2></h2>
-<p1>Each matrix class handles operators for multiplication, as well as for rotating</p1>
-
-<p2></p2>
+<ul
+<li>Matrix 3</li href=m3>
+<li>Matrix 4</li>
+<li>Vector 2</li>
+<li>Vector 4</li>
+</ul>
 
 
 
 
+<h2>Matrix 3 Class<h2 #m3>
 
