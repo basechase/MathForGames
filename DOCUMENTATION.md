@@ -32,7 +32,7 @@
 </ul>
 
 
-<h2>Matrix 4 Class</h2 id=m4></h2>
+<h2>Matrix 4 Class</h2 id=m4>
 
 <ul>
 <li>Returns a matrix rotating around its x,y, or z axis if needed</li>
