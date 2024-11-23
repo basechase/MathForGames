@@ -47,10 +47,45 @@
 <ul>
 <li>Gives the use of x and y components of a vector</li>
 <li>Provides magnitude function, which returns the length of a vector</li>
-<li>Provides normalize function, returns a unit vector of the original vector</li>
-<li>Provides DotProduct function, which returns an angle between two vectors</li>
+<li>Provides normalize function, returns a unit length of the original vector</li>
+<li>Provides DotProduct function, returns an angle between two vectors</li>
 <li>Provides a function for returning distance across two Vector2's</li>
 <li>Provides a translation from visual studio's system.numerics to the mathlibraries vector, and vise versa</li>
 
 </ul>
 
+
+<h2>Vector 3 Class</h2 id=v3>
+
+
+<ul>
+
+<li>Gives use of x, y, and z components of a vector</li>
+<li>Provides magnitutde function, for returning length of a vector</li>
+<li>Provides normalize function for the unit length of a vector </li>
+<li>Provides DotProduct function to give the angle between to vectors </li>
+<li>Provides operator for adding two vectors</li>
+<li>Provdes operator for subtracting two vectors </li>
+<li>Provides an operator for multipling a vector by a scalar</li>
+<li>Provides an operator for dividing a vector by a scalar</li>
+<li>Converts from System.Numeric.Vector3 to MathLibrary.Vector3</li>
+
+</ul>
+
+
+<h2>Vector 4 Class</h2 id=v4>
+
+<ul>
+
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+
+</ul>
