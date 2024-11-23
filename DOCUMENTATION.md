@@ -39,7 +39,7 @@
 <li>Operator overloads for a matrix4 x a vector4</li>
 <li>Operator overload for a Matrix4 x a Matrix4</li>
 
-<ul>
+</ul>
 
 
 <h2>Vector 2 Class</h2 id =v2>
